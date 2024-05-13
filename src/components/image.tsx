@@ -36,6 +36,8 @@ const Image = () => {
 
         fetchData()
 
+        setOpenModal(true)
+        
         setSpecificImage({
             author: "",
             download_url: "",
@@ -44,7 +46,6 @@ const Image = () => {
             url: "",
             width: 0
         })
-        setOpenModal(true)
         return
     }
 
