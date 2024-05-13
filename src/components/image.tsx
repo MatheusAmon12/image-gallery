@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Card, CardContent, CardFooter } from "./ui/card";
+import { Card, CardContent } from "./ui/card";
 import { fetcher } from "@/lib/fetch";
 
 interface Image {
-    albumId: number,
-    id: number,
-    thumbnailUrl: string,
-    title: string,
-    url: string
+    author: string,
+    download_url: string,
+    height: number,
+    id: string,
+    url: string,
+    width: number,
 }
 
 const Image = () => {
@@ -18,7 +19,6 @@ const Image = () => {
             const imagesFromApi = await fetcher()
             setImages(imagesFromApi)
         }
-        
         fetchData()
     }, [])
 
@@ -27,12 +27,9 @@ const Image = () => {
             {
                 images.map((image) => (
                     <Card key={image.id} className="w-auto border-none shadow-none bg-transparent">
-                        <CardContent>
-                            <img src={image.url} alt={image.title} loading="lazy" className="w-full h-auto hover:scale-105 cursor-pointer" />
+                        <CardContent className="h-auto p-2">
+                            <img src={image.download_url} alt={image.author} loading="lazy" className="w-full min-h-48 max-h-48 hover:scale-105 cursor-pointer rounded-md object-cover" />
                         </CardContent>
-                        <CardFooter>
-                            <h1 className="text-xs truncate">{image.title}</h1>
-                        </CardFooter>
                     </Card>
                 ))
             }
