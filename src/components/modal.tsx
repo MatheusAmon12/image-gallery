@@ -19,7 +19,7 @@ const Modal = ({image, setOpenModal, openModal}: ModalProps) => {
 
     return ( 
             <Dialog open={openModal} onOpenChange={setOpenModal}>
-                <DialogContent className="pt-10 scale-90 xl:scale-105 rounded-md">
+                <DialogContent className="pt-10 scale-90 md:scale-100 xl:scale-105 rounded-md">
                     <div className="h-auto">
                         <img src={image.download_url} alt={image.author} className="rounded-md h-full" />
                     </div> 
