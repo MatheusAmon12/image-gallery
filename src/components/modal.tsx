@@ -23,7 +23,7 @@ const Modal = ({image, setOpenModal, openModal}: ModalProps) => {
                     <div className="h-auto">
                         <img src={image.download_url} alt={image.author} className="rounded-md h-full" />
                     </div> 
-                    <DialogFooter className="text-2xl font-semibold truncate">
+                    <DialogFooter className="text-lg lg:text-2xl font-semibold truncate">
                         <h1>{image.author}</h1>
                     </DialogFooter>     
                 </DialogContent>    
