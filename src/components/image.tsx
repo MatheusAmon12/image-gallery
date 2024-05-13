@@ -26,12 +26,12 @@ const Image = () => {
         <>
             {
                 images.map((image) => (
-                    <Card key={image.id}>
+                    <Card key={image.id} className="w-auto border-none shadow-none bg-transparent">
                         <CardContent>
-                            <img src={image.url} alt={image.title} loading="lazy" className="w-full h-auto" />
+                            <img src={image.url} alt={image.title} loading="lazy" className="w-full h-auto hover:scale-105 cursor-pointer" />
                         </CardContent>
                         <CardFooter>
-                            <h1>{image.title}</h1>
+                            <h1 className="text-xs truncate">{image.title}</h1>
                         </CardFooter>
                     </Card>
                 ))

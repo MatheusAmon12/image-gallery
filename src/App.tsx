@@ -1,11 +1,11 @@
 import './App.css'
-import Image from './components/image'
+import Gallery from './components/gallery'
 
 function App() {
 
   return (
     <>
-      <Image />
+      <Gallery />
     </>
   )
 }
